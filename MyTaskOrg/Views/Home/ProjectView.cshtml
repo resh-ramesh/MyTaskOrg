@@ -1,0 +1,59 @@
+﻿
+<h2>ProjectView</h2>
+
+@using MyTaskOrg.Models;
+
+@using System.Collections.Generic;
+
+@{
+
+    MyTaskDataEntities1 db = new MyTaskDataEntities1();
+    List<projectTable> list = db.projectTables.ToList();
+
+
+}
+<style>
+    th, td {
+        padding: 20px;
+    }
+
+    table.center {
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+<form name="form2" action="ProjectDetails" method="post">
+    <div>
+        <center>
+        @{
+
+           <table  class="center" style=" border-collapse: collapse;
+        border: 1px solid black;
+        background-color:burlywood;
+        left: 100px;
+        ">
+                <tr>
+                    <th>Project Name</th>
+                    <th>Course Id</th>
+
+                </tr>
+                @{
+                    foreach (projectTable s in list)
+                    {
+                        <tr>
+                            <td>@s.ProjectName</td>
+                            <td>@s.CourseId</td>
+
+                        </tr>
+                    }
+                }
+            </table>
+
+        }
+        </center>
+
+        <input type="submit" value="Back" />
+
+    </div>
+</form>
+

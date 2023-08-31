@@ -1,0 +1,37 @@
+﻿
+@model MyTaskOrg.Models.courseTable
+@{
+    ViewBag.Title = "Edit";
+}
+
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+
+<html>
+<head>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+
+        <div class="container" style="background-color:darkgray">
+            <h2>
+                Edit Course
+            </h2>
+            <div class="form-group">
+                CourseId:@Html.TextBoxFor(x => x.CourseId, new { @readonly = "readonly", @class = "form-contrl" })
+            </div>
+           
+            <div class="form-group">
+                CourseName:@Html.TextBoxFor(x => x.CourseName, new { @minlength = "1", @class = "form-contrl" })
+            </div>
+            
+
+            <div class="form-group">
+                <button class="btn-success">Edit</button>
+            </div>
+        </div>
+
+    }
+    
+</body>
+</html>

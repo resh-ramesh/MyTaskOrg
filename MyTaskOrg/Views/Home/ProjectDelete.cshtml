@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "ProjectDelete";
+}
+
+@using MyTaskOrg.Models;
+
+@using System.Collections.Generic;
+
+@{
+
+    MyTaskDataEntities1 db = new MyTaskDataEntities1();
+    List<projectTable> list = db.projectTables.ToList();
+
+
+}
+<style>
+    th, td {
+        padding: 20px;
+    }
+
+    table.center {
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+<form name="form2" action="Pdelete" method="post">
+    <div>
+        @{
+
+            <table class="center" style=" border-collapse: collapse;
+        border: 1px solid black;
+        background-color:burlywood;
+        left: 100px;">
+                <tr>
+                    <th>Project Name</th>
+                    <th>Course Id</th>
+
+                </tr>
+                @{
+                    foreach (projectTable s in list)
+                    {
+                        <tr>
+                            <td>@s.ProjectName</td>
+                            <td>@s.CourseId</td>
+
+                        </tr>
+                    }
+                }
+                <tr><td colspan="=2" style="font-size :large;color:darkviolet">Select Project To Delete</td></tr>
+            <tr><td>@Html.DropDownList("ListItem")</td>
+        <td><input type="submit" value="Delete" /></td></tr>
+            </table>
+
+        }
+        
+
+        
+
+    </div>
+</form>
+<form name="fp" action="ProjectDetails" method="post">
+    <input type="submit" value="<<ProjectDetails" />
+</form>
+
+

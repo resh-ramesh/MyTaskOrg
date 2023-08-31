@@ -1,0 +1,78 @@
+﻿
+@{
+    ViewBag.Title = "client";
+}
+
+
+
+
+
+<h2>home</h2>
+<style>
+    th, td {
+        padding: 20px;
+    }
+
+    table.center {
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+<script src="~/Scripts/jquery.validate.js"></script>
+<div style="text-align:center"><h2>Client Login</h2></div>
+
+<form name="form1" id="f1" action="CLogin" method="post">
+    <table class="center" style="border-collapse :collapse;border:1px solid black;left:100px;background-color:antiquewhite">
+        <tr>
+            <td>USERNAME</td>
+
+            <td>
+                <input type="text" id="uname" name="name" />
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                PASSWORD
+            </td>
+
+
+            <td>
+                <input type="password" id="pw" name="pass" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" id="submit" value="Login" />
+            </td>
+        </tr>
+    </table>
+</form>
+<div style="text-align:center">
+    <h3 style="color:red;font-family:'Baskerville Old Face'">@ViewBag.message</h3>
+</div>
+<script>
+        $(document).ready(function () {
+        });
+
+        $('form[id="f1"]').validate({
+
+            rules: {
+                name: "required",
+                pass: "required",
+
+            },
+
+            messages: {
+                name: "UserNameRequired!",
+                pass: "PasswordRequired!",
+
+            },
+            //submitHandler: function (form) {
+
+            //}
+        });
+</script>
+
+

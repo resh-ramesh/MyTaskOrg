@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewBag.Title = "ProjectDetails";
+}
+
+
+
+<style>
+    .form-submit-button {
+        background: #0066A2;
+        color: white;
+        border-style: outset;
+        border-color: #0066A2;
+        height: 50px;
+        width: 150px;
+        font: bold15px arial,sans-serif;
+        text-shadow: none;
+    }
+
+        .form-submit-button:hover {
+            background: #016ABC;
+            color: #fff;
+            border: 1px solid #eee;
+            border-radius: 20px;
+            box-shadow: 5px 5px 5px #eee;
+            text-shadow: none;
+        }
+</style>
+
+<table align="center">
+    <tr>
+        <td>
+            <form name="pv" id="p1" action="ProjectView" method="post">
+                <input type="submit" class="form-submit-button" value="ProjectView" />
+            </form>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <form name="pa" id="s1" action="ProjectAdd" method="post">
+                <input type="submit" class="form-submit-button" value="ProjectAdd" />
+            </form>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <form name="pd" id="s1" action="ProjectDelete" method="post">
+                <input type="submit" class="form-submit-button" value="ProjectDelete" />
+            </form>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <form name="pd" id="s1" action="ProjectEdit" method="post">
+                <input type="submit" class="form-submit-button" value="ProjectEdit" />
+            </form>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <form name="pd" id="s1" action="Back" method="post">
+                <input type="submit" value="Home" />
+            </form>
+        </td>
+    </tr>
+</table>
+
+

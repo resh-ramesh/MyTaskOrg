@@ -1,0 +1,43 @@
+﻿
+@*@{
+    ViewBag.Title = "Pedit";
+}*@
+
+<h2>Project Edit</h2>
+<style>
+    th, td {
+        padding: 20px;
+    }
+
+    table.center {
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+
+<form name="form3" action="Updatedone" method="post">
+    <table class="center" style=" border-collapse: collapse;
+        border: 1px solid black;
+        background-color:burlywood;
+        left: 100px;
+        ">
+        <tr><td>
+            ProjectId</td><td>
+            <input type="text" name="text1" id="text1" value=@ViewBag.Id readonly></td></tr>
+            <tr><td>  ProjectName</td><td>
+            <input type="text" name="text2" id="text2" value=@ViewBag.name>
+            </td></tr>
+            <tr><td>CourseId</td><td>
+            <input type="text" name="text3" id="text3" value=@ViewBag.course readonly>
+            </td><tr><td>Select Course To Change</td>
+              <td>  @Html.DropDownList("courses", TempData["lev"] as List<SelectListItem>)</td></tr>
+               <tr><td> <input type="submit" value="update"></td></tr>
+            </table>
+</form>
+<form name="fp" action="ProjectDetails" method="post">
+    <input type="submit" value="<<ProjectDetails" />
+</form>
+<br />
+<form name="fp" action="list" method="post">
+<input type="submit" value="coursDetails" />
+</form>

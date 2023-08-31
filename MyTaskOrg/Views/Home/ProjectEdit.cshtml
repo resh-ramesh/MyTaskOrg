@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "ProjectEdit";
+}
+
+<h2>ProjectEdit</h2>
+<form name="formedit" action="Pedit" method="post">
+<center>
+   <div style="font-weight:500;font-style:italic;color:blue" >Select Project To Edit</div><br /><br /><br />
+    @Html.DropDownList("ListItem")<br />
+    <br />
+    <br />
+    <input type="submit" value="Edit" /></center>
+</form>

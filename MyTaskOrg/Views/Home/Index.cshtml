@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<style>
+    .form-submit-button {
+        background: #0066A2;
+        color: white;
+        border-style: outset;
+        border-color: #0066A2;
+        height: 50px;
+        width: 150px;
+        font: bold15px arial,sans-serif;
+        text-shadow: none;
+    }
+
+        .form-submit-button:hover {
+            background: #016ABC;
+            color: #fff;
+            border: 1px solid #eee;
+            border-radius: 20px;
+            box-shadow: 5px 5px 5px #eee;
+            text-shadow: none;
+        }
+</style>
+
+<table align="center">
+    <tr>
+        <td>
+            <form name="projectform" id="p1" action="Home/Admin" method="post">
+                <input type="submit" class="form-submit-button" value="AdminLogin" />
+            </form>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <form name="Clientform" id="s1" action="Client/ClientLogin" method="post">
+                <input type="submit" class="form-submit-button" value="ClientLogin" />
+            </form>
+        </td>
+    </tr>
+
+</table>
+</h2>
+
+
+

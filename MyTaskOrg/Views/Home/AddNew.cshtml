@@ -1,0 +1,85 @@
+﻿
+@{
+    ViewBag.Title = "AddNew";
+}
+
+<h2>AddNew</h2>
+
+
+<html>
+<head>
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+
+    <style>
+        th, td {
+            padding: 20px;
+        }
+
+        table.center {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+    <script type="text/javascript">
+        /*code: 48-57 Numbers*/
+        function restrictAlphabets(e) {
+            var x = e.which || e.keycode;
+            if ((x >= 48 && x <= 57))
+                return true;
+            else {
+
+                return false;
+            }
+        }
+
+    </script>
+</head>
+<body>
+
+    <form name="f1" id="f1" action="Savecourse" method="post">
+        <div style="text-align:center">
+            <h2>
+                Add New Course
+            </h2>
+        </div>
+        <table class="center" style=" border-collapse: collapse;
+        border: 1px solid black;
+        background-color:cornflowerblue;
+        left: 100px;
+        ">
+
+
+            <tr><td>Course Name<td><input type=text name="t1" id="t1"></td></tr>
+           
+
+
+
+        </table><br><br>
+        <div style="text-align:center">
+            <input type="submit" id="submit" value="submit">
+        </div>
+
+    </form>
+
+    <script>
+        $(document).ready(function () {
+        });
+
+        $('form[id="f1"]').validate({
+
+            rules: {
+                t1: "required",
+               
+            },
+
+            messages: {
+                t1: "Required CourseName!",
+                
+            },
+
+
+        });
+    </script>
+</body>
+</html>

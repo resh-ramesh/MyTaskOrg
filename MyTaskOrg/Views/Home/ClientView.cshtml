@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "ClientView";
+}
+
+<h2>ClientView</h2>
+
+@using MyTaskOrg.Models;
+
+@using System.Collections.Generic;
+
+@{
+
+    MyTaskDataEntities1 db = new MyTaskDataEntities1();
+    List<ClientTable> list = db.ClientTables.ToList();
+
+
+}
+<style>
+    th, td {
+        padding: 20px;
+    }
+
+    table.center {
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+<form name="form2" action="ClientDetails" method="post">
+    <div>
+        <center>
+            @{
+
+                <table class="center" style=" border-collapse: collapse;
+        border: 1px solid black;
+        background-color:burlywood;
+        left: 100px;
+        ">
+                    <tr>
+                        <th>Client Name</th>
+                        <th>Project Name</th>
+
+                    </tr>
+                    @{
+                        foreach (ClientTable s in list)
+                        {
+                            <tr>
+                                <td>@s.ClientName</td>
+                                <td>@s.ProjectName</td>
+
+                            </tr>
+                        }
+                    }
+                </table>
+
+            }
+        </center>
+
+        <input type="submit" value="Back" />
+
+    </div>
+</form>

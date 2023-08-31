@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewBag.Title = "ProjectAdd";
+}
+
+
+<h2>ProjectAdd</h2>
+
+
+<style>
+    th, td {
+        padding: 20px;
+    }
+
+    table.center {
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+<form name="form1" action="Insert" method="post" id="form1">
+    <table class="center" style=" border-collapse: collapse;
+        border: 1px solid black;
+        background-color:burlywood;
+        left: 100px;"">
+        <tr>
+            <td> Project Name </td>
+            <td>
+                <input class="name" type="text" name="pn" id="pname"></h3>
+            </td>
+        </tr>
+        <tr>
+            <td>course Name
+
+            <td>@Html.DropDownList("courses", TempData["lev"] as List<SelectListItem>)
+
+        </tr>
+        <tr>
+            <td>
+                <input type="file" name="filename" onchange="readURL(this);" />
+                <img id="pict" src="#" alt="your image" />
+            </td>
+        </tr>
+        <tr>
+           
+        </tr>
+
+        <tr>
+            <td>
+                <input type="submit" value="ADD" />
+            </td>
+        </tr>
+    </table>
+
+</form>
+<form name="form2" action="list" method="post" id="form2">
+    <input type="submit" value="CourseDetails" />
+</form>
+<p></p>
+<form name="fp" action="ProjectDetails" method="post">
+    <input type="submit" value="<<ProjectDetails" />
+</form>
+<script>
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#pict').attr('src', e.target.result).width(150).height(200);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>

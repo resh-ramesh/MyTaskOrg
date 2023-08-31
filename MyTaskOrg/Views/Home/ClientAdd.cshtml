@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "ClientAdd";
+}
+
+<h2>ClientAdd</h2>
+
+<style>
+    th, td {
+        padding: 20px;
+    }
+
+    table.center {
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+<form name="form1" action="ClientInsert" method="post" id="form1">
+    <table class="center" style=" border-collapse: collapse;
+        border: 1px solid black;
+        background-color:burlywood;
+        left: 100px;" ">
+        <tr>
+            <td> Client Name </td>
+            <td>
+                <input class="name" type="text" name="pn" id="pname"></h3>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                PASSWORD
+            </td>
+
+
+            <td>password must be 10 letters
+                <input type="password" id="pw" name="pass" />
+            </td>
+        </tr>
+        <tr>
+            <td>Project Name
+
+            <td>@Html.DropDownList("Projects", TempData["lev"] as List<SelectListItem>)
+
+        </tr>
+
+
+        <tr>
+            <td>
+                <input type="submit" value="ADD" />
+            </td>
+        </tr>
+    </table>
+
+</form>
+
+<form name="fp" action="ClientDetails" method="post">
+    <input type="submit" value="<<ClientDetails" />
+</form>

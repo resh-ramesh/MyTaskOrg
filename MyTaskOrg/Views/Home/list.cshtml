@@ -1,0 +1,71 @@
+﻿@model List<MyTaskOrg.Models.courseTable>
+    @{
+    ViewBag.Title = "CourseEdit";
+}
+<style>
+    .form-submit-button {
+        background: #5cb85c;
+        color: white;
+        border-style: outset;
+        border-color: #0066A2;
+        height: 50px;
+        width: 150px;
+        font: bold15px arial,sans-serif;
+        text-shadow: none;
+    }
+
+        .form-submit-button:hover {
+            background: #5cb85c;
+            color: #fff;
+            border: 1px solid #eee;
+            border-radius: 20px;
+            box-shadow: 5px 5px 5px #eee;
+            text-shadow: none;
+        }
+</style>
+<h2 class="container">CourseList</h2>
+@{
+    var wgrid = new WebGrid(source:Model, rowsPerPage: 4);
+}
+<div class="container" style="background-color:burlywood">
+    @wgrid.GetHtml(tableStyle: "table table-bordered table-striped", htmlAttributes: new { id = "wgrid" },
+    columns: wgrid.Columns(
+        wgrid.Column(columnName: "CourseId", header: "CourseId"),
+        wgrid.Column(columnName: "CourseName", header: "CoursName"),
+        
+        wgrid.Column(header: "Edit", format:@<a href= "/Home/Edit/@item.courseId" class="btn btn-success">Edit</a>),
+
+wgrid.Column(header: "Delete", format:@<a href="#" class="btn btn-success" onclick="Deleterow(@item.courseId)">Delete</a>)))
+
+</div>
+<form name="new" action="AddNew" method="post">
+    <input type="submit" class="form-submit-button" id="add" value="Add New Course" />
+</form>
+<script type="text/javascript">
+           function Deleterow(CourseId) {
+               alert(CourseId);
+              if (confirm("Confirm Delete") == true)
+                 {
+            $.ajax({
+                    method: "POST",
+                    url: "/Home/Delete",
+                    dataType: "json",
+                    data:{id:CourseId},
+
+                    // contentType: 'application/json;charset=utf-8',
+                    success: function (result) {
+                        alert(result);
+
+                    },
+                    error: function () {
+                        alert("Error Occured!");
+
+                    }
+                })
+
+                    }
+        }
+</script>
+<form name="form2" action="ProjectDetails" method="post">
+    <input type="submit" value="ProjectDetails" />
+</form>
